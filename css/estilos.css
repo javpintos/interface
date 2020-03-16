@@ -1,0 +1,159 @@
+*{ 
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Franklin Gothic', 'Arial', 'Sans-serif';
+  font-weight: 100;
+}
+
+header {
+  position: fixed;
+  display: flex;
+	width: 100%;
+	height: 70px; 
+  background:#be79df;
+  float: left;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.logo {
+  width: 25%;
+  padding: 15px 30px;
+}
+
+.user_logged {
+  width: 70%;
+  color: white;
+  padding: 27px 30px;
+  font-weight: 300;
+}
+
+.logout {
+  padding: 16px 7px;
+  float: right;
+}
+
+#sidebar {
+  position:fixed;
+  left: 0;
+	height: 100%;
+  width:25%;
+  top: 70px;
+  background:#be79df; 
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 25%;
+  background-color: 1px solid rgba(255, 255, 255, .3);
+  color: white;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+#sidebar ul a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 1.2em;
+  font-size: 1.2rem;
+  color: white;
+  padding: 12px 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  /*transition: .1s;*/
+}
+
+#sidebar ul li:hover a {
+  /*padding-left: 40px;*/
+  background:#fbcffc; 
+  color:#be79df; 
+} 
+
+#rightSideWrapper {
+	width:75%; 
+	float: right;
+	background: white;	
+}
+
+.ContentBox{
+	margin-top: 70px; 
+	display:flex;
+	flex-flow: row wrap;
+} 
+
+main, section {
+  padding: 15px 15px 0px;
+}
+
+.graphs {
+  height: 100%;
+  order: 1;
+  flex: 0 1 100%;
+  display: inline-block;
+  /*background-color:#cff1ef;*/
+}
+
+.graphs table td{
+  margin: 12px;
+  display: inline-block;
+  background-color: #cff1ef;
+  border-collapse: collapse;
+}
+
+.graphs table td:hover {
+  background-color: #96ece7;
+  color: white; 
+}
+
+.graphs a img {
+  width: 120px;
+  height: auto;
+  margin: 15px;
+}
+
+main {
+  height: 100%;
+  order: 2;
+  flex: 0 1 100%; 
+}
+
+main h3 {
+  padding: 5px;
+}
+
+main .last_user_registered, main .last_posts, main .top_countries {
+  margin: 12px;
+  display: inline-block;
+}
+
+main .last_user_registered a img {
+  width: 23px;
+  height: auto;
+  border-radius: 50%;
+}
+
+main .last_user_registered table, main .last_posts table, main .top_countries table {
+  background-color: #fbcffc;
+  border-collapse: collapse;
+}
+
+main .last_user_registered tr:hover td, main .last_posts tr:hover td, main .top_countries tr:hover td 
+{
+  background-color: #be79df;
+  color: white; 
+}
+
+th, td {
+  padding: 10px;
+}
+
+tr, thead {
+  border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
