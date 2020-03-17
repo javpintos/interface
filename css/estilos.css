@@ -14,38 +14,67 @@ body {
 header {
   position: fixed;
   display: flex;
+  flex-direction: row;
 	width: 100%;
 	height: 70px; 
   background:#be79df;
-  float: left;
   border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
 
 .logo {
-  width: 25%;
-  padding: 15px 30px;
+  padding: 15px 35px;
+  left: 0;
 }
 
 .user_logged {
-  width: 70%;
+  width: 80%;
   color: white;
-  padding: 27px 30px;
-  font-weight: 300;
+  padding: 23px 15px;
 }
 
 .logout {
-  padding: 16px 7px;
-  float: right;
+  padding: 16px 15px;
 }
 
-#sidebar {
+.menu1 {
   position:fixed;
-  left: 0;
-	height: 100%;
+  background-color: #be79df;
+  left:0;
+  top:70px;
   width:25%;
-  top: 70px;
-  background:#be79df; 
+  height:100%;          
 }
+
+.menu1{
+  display:none;
+}
+
+.menu2 {
+  position:fixed;
+  left:0;
+  bottom:0;
+  width:100%;
+  height:70px;
+  background-color: #be79df;
+}
+
+.menu2 > div{
+  float: left;
+  width: 25%;
+  padding: 12px 30px;
+}
+
+.menu2 div a{
+  line-height: 1.2em;
+  font-size: 1.2rem;
+  color: white;
+  border: 3px 7px solid rgba(255, 255, 255, .1);
+} 
+
+.menu2{
+  display:block;
+}
+
 footer {
   position: fixed;
   left: 0;
@@ -57,7 +86,7 @@ footer {
   padding-bottom: 5px;
 }
 
-#sidebar ul a {
+.menu1 ul a {
   display: block;
   height: 100%;
   width: 100%;
@@ -67,17 +96,15 @@ footer {
   padding: 12px 30px;
   box-sizing: border-box;
   border-bottom: 1px solid rgba(255, 255, 255, .1);
-  /*transition: .1s;*/
 }
 
-#sidebar ul li:hover a {
-  /*padding-left: 40px;*/
+.menu1 ul li:hover a {
   background:#fbcffc; 
   color:#be79df; 
 } 
 
 #rightSideWrapper {
-	width:75%; 
+	width:100%; 
 	float: right;
 	background: white;	
 }
@@ -88,7 +115,7 @@ footer {
 	flex-flow: row wrap;
 } 
 
-main, section {
+.main, section {
   padding: 15px 15px 0px;
 }
 
@@ -96,15 +123,25 @@ main, section {
   height: 100%;
   order: 1;
   flex: 0 1 100%;
-  display: inline-block;
-  /*background-color:#cff1ef;*/
+  display:flex;
+	flex-flow: row wrap;
 }
 
-.graphs table td{
-  margin: 12px;
-  display: inline-block;
-  background-color: #cff1ef;
+.graphs table{
   border-collapse: collapse;
+}
+
+.graphs table tr {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgba(255, 255, 255, .3);
+  margin-bottom: 1em;
+}
+
+.graphs table td {
+  margin: 12px;
+  padding: 5px 10px;
+  background-color: #cff1ef;
 }
 
 .graphs table td:hover {
@@ -113,7 +150,7 @@ main, section {
 }
 
 .graphs a img {
-  width: 120px;
+  width: 87px;
   height: auto;
   margin: 15px;
 }
@@ -130,7 +167,8 @@ main h3 {
 
 main .last_user_registered, main .last_posts, main .top_countries {
   margin: 12px;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 }
 
 main .last_user_registered a img {
@@ -139,13 +177,13 @@ main .last_user_registered a img {
   border-radius: 50%;
 }
 
-main .last_user_registered table, main .last_posts table, main .top_countries table {
+main table {
   background-color: #fbcffc;
   border-collapse: collapse;
+  width: 100%;
 }
 
-main .last_user_registered tr:hover td, main .last_posts tr:hover td, main .top_countries tr:hover td 
-{
+main table tr:hover td {
   background-color: #be79df;
   color: white; 
 }
@@ -155,5 +193,25 @@ th, td {
 }
 
 tr, thead {
+  text-align: left;
   border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+
+@media (min-width: 768px) {
+  .menu1{
+    display:block;
+  }
+
+  .menu2{
+    display: none;
+  }
+  .user_logged {
+    padding: 23px 95px;
+  }
+  #rightSideWrapper {
+    width:75%; 
+  }
+  main table {
+    width: auto;
+  }
 }
